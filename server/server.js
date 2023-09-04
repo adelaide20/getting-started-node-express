@@ -5,10 +5,16 @@ const app = express()
 
 const port = 3030
 
+
+// import routes
+const tutorials = require('./routes/tutorial.route')
+
 // basic routing
 app.get('/', (req, res) =>
     res.send("Hello World!")
 );
+
+app.use('/', tutorials)
 
 
 // listening to the server port
